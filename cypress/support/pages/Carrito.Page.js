@@ -9,6 +9,8 @@ class ShoppingCart {
     shoppingCartIconNumber: () => cy.get('.cart-btn .cart-items-value'),
     shoppingCartButton: () => cy.get('.cart-btn'),
     shoppingCartItem: () => cy.get('div.cart-ctr.py-4>').find('span.cart-ctxt'),
+    deleteButton: () => cy.get('button.delete-btn').eq(0),
+    emptyCartText: () => cy.get('.empty-cart>.text-gray')
   };
 
   selectRandomCategorie() {
@@ -49,6 +51,10 @@ class ShoppingCart {
 
   ClickAddToCartButton() {
     this.get.addToCartButton().click();
+  }
+
+  deleteProduct(){
+    this.get.deleteButton().click()
   }
 }
 
